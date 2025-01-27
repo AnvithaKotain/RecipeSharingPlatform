@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Recipes</title>
+    <link rel="stylesheet" href="viewrecipe.css">
+</head>
+<body>
+    <h1>All Shared Recipes</h1>
+    
+    <div id="recipes-container"></div>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <a href="dashborad.html" class="btn back-btn">Back to Home</a>
+    </div>
+
+    <script>
+        // Retrieve recipes from local storage
+        const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+        
+        // Function to display recipes
+        function displayRecipes() {
+            const container = document.getElementById('recipes-container');
+            container.innerHTML = ''; // Clear container
+
+            if (recipes.length === 0) {
+                container.innerHTML = '<p>No recipes found. Please add some!</p>';
+                return;
+            }
+             
+            recipes.forEach(recipe => {
+                const recipeCard = document.createElement('div');
+                recipeCard.className = 'recipe-card';
+                recipeCard.innerHTML = `
+                    <img src="${recipe.pic}" alt="${recipe.name}" class="recipe-image">
+                    <div class="recipe-info">
+                        <h3 class="recipe-name">${recipe.name}</h3>
+                        <p class="recipe-desc">${recipe.desc}</p>
+                    </div>
+                `;
+                container.appendChild(recipeCard);
+            });
+        }
+
+        // Call display function on page load
+        displayRecipes();
+    </script>
+</body>
+</html>

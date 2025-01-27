@@ -1,0 +1,274 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background: url("img/dbb.jpg");
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.meal-wrapper {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: url("img/db1.webp");
+}
+
+.title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.meal-search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-control {
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    width: 300px;
+}
+
+.search-btn,
+.share-recipe-btn {
+    background-color: #090908;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.share-recipe-btn {
+    background-color: #0c0b0b;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.search-btn:hover,
+.share-recipe-btn:hover {
+    background-color: #0f0f0e;
+}
+
+.meal-result {
+    margin-top: 2rem;
+}
+
+.meal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.meal-item {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.meal-item:hover {
+    transform: translateY(-10px);
+}
+
+.meal-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.meal-name {
+    padding: 1rem;
+    text-align: center;
+}
+
+.recipe-btn {
+    background-color: #0a0a0a;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+/* Recipe Modal Styling (Scrollable Content) */
+.meal-details {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.meal-details.showRecipe {
+    display: flex;
+}
+
+.meal-details-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    color: #333;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+    max-height: 80vh; /* 80% of the viewport height */
+    overflow-y: auto; /* Add vertical scrollbar */
+    padding-top: 60px; /* Add space for the close button */
+}
+
+.recipe-close-btn {
+    background-color: #4c4141;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1rem; /* Adjust font size for better visibility */
+    z-index: 1001; /* Ensure it’s above the content */
+}
+
+.recipe-meal-img img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.recipe-instruct {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+/* Share Modal Styling */
+.meal-share {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(234, 227, 227, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.meal-share.showShare {
+    display: flex;
+}
+
+.meal-share-content {
+    background-color: rgb(126, 120, 120);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+.share-close-btn {
+    background-color: #f5f3f3;
+    color: rgb(9, 9, 9);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1rem; /* Adjust font size for better visibility */
+    z-index: 1001; /* Ensure it’s above the content */
+} 
+
+.share-title {
+    margin-bottom: 1rem;
+}
+
+.share-recipe-name,
+.share-recipe-pic,
+.share-recipe-desc {
+    margin-bottom: 1rem;
+}
+
+.submit-btn {
+    background-color: #090908;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/* View Button Centering */
+.view-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem; /* Adjust the margin as needed */
+}
+
+.btn {
+    background-color: #080707; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: inline-block; /* Allow padding and margins */
+}
+
+.btn:hover {
+    background-color: #0c0b0b; /* Darker color on hover */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .meal-item {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .meal-item {
+        flex-basis: 100%;
+    }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
